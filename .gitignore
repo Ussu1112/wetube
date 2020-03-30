@@ -1,5 +1,6 @@
 node_modules
 
+package-lock.json
 
 # Created by https://www.gitignore.io/api/node
 # Edit at https://www.gitignore.io/?templates=node
@@ -112,4 +113,3 @@ temp/
 
 # End of https://www.gitignore.io/api/node
 
-package-lock.json/
