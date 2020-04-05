@@ -6,9 +6,11 @@ import bodyParser from "body-parser";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
+import routes from "./router"
 
 const app = express();
 
+app.set('view engine',"pug");
 //미들웨어은 위에서부터 아래로 작동한다.
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -18,7 +20,7 @@ app.use(helmet());
 app.use(logger("dev"));
 
 app.use("/", globalRouter);
-app.use("/user", userRouter);
-app.use("/video", videoRouter);
+app.use(routes.users, userRouter);
+app.use(routes.videos, videoRouter);
 
 export default app;
